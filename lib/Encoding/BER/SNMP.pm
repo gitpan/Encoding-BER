@@ -5,11 +5,13 @@
 # Created: 2007-Feb-04 15:51 (EST)
 # Function: BER Encoding/Decoding for SNMP
 #
-# $Id: SNMP.pm,v 1.6 2007/02/09 05:26:37 jaw Exp $
+# $Id: SNMP.pm,v 1.7 2007/03/06 02:50:11 jaw Exp $
 
 package Encoding::BER::SNMP;
 use Encoding::BER 'init_tag_lookups';
-our @ISA = qw(Encoding::BER);
+use vars qw($VERSION @ISA);
+$VERSION = '1.00';
+@ISA = qw(Encoding::BER);
 use strict;
 
 			     

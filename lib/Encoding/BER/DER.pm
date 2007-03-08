@@ -5,11 +5,13 @@
 # Created: 2007-Feb-04 16:35 (EST)
 # Function: DER
 #
-# $Id: DER.pm,v 1.4 2007/02/10 22:09:32 jaw Exp $
+# $Id: DER.pm,v 1.5 2007/03/06 02:50:10 jaw Exp $
 
 package Encoding::BER::DER;
 use Encoding::BER;
-our @ISA = qw(Encoding::BER);
+use vars qw($VERSION @ISA);
+$VERSION = '1.00';
+@ISA = qw(Encoding::BER);
 use strict;
 
 sub new {

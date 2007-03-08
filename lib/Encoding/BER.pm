@@ -5,13 +5,14 @@
 # Created: 2007-Jan-28 16:03 (EST)
 # Function: BER encoding/decoding (also: CER and DER)
 #
-# $Id: BER.pm,v 1.8 2007/02/10 22:09:31 jaw Exp $
+# $Id: BER.pm,v 1.9 2007/03/06 02:50:10 jaw Exp $
 
 # references: ITU-T x.680 07/2002  -  ASN.1
 # references: ITU-T x.690 07/2002  -  BER
 
 package Encoding::BER;
-our $VERSION = '0.01';
+use vars qw($VERSION);
+$VERSION = '1.00';
 use Carp;
 use strict;
 # loaded on demand if needed:
@@ -883,8 +884,9 @@ sub smells_like_a_number {
     my $me = shift;
     my $d  = shift;
 
-    no warnings;
     return 1 if ref $d && UNIVERSAL::isa($d, 'Math::BigInt');
+    # NB: 5.00503 does not have 'no warnings';
+    local $^W = 0;
     return ($d + 0 eq $d);
 }
 
@@ -1562,7 +1564,7 @@ not be able to decode them both correctly. eg:
 If you specify data to be encoded using the "short form", the module may
 guess the type differently than you expect. If it matters, be explicit.
 
-This mdule does not do data validation. It will happily let you encode
+This module does not do data validation. It will happily let you encode
 a non-ascii string as a C<ia5_string>, etc.
 
     

@@ -5,10 +5,12 @@
 # Created: 2007-Feb-04 16:43 (EST)
 # Function: dump perl data to/from ber
 #
-# $Id: Dumper.pm,v 1.4 2007/02/10 22:09:32 jaw Exp $
+# $Id: Dumper.pm,v 1.5 2007/03/06 02:50:10 jaw Exp $
 
 package Encoding::BER::Dumper;
 use Encoding::BER;
+use vars qw($VERSION);
+$VERSION = '1.00';
 use strict;
 
 sub pl2ber {
